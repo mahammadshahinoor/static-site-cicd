@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Installing dependencies (if any) – none for static site"
+  pre_build:
+    commands:
+      - echo "Running pre-build checks..."
+      - echo "Could run HTML linter here (e.g., htmlhint)"
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - echo "No build required for static files – just copying"
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: '.'   # use the root
+  discard-paths: no
